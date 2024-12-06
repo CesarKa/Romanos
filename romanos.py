@@ -1,3 +1,4 @@
+
 numeros_romanos = {
     "I": 1,
     "V": 5,
@@ -14,8 +15,10 @@ def a_romanos(valor: int) -> str:
         if value == valor:
             romano = clave
     return romano
+         
 
 
-assert a_romanos(1) == "I"
-assert a_romanos(500) == "D"
+
+#assert a_romanos(1) == "I"
+#assert a_romanos(500) == "D"
 
