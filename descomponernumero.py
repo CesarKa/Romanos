@@ -7,8 +7,7 @@ def descomponer(numero):
 
     while numero > 0:
         modulo = numero % 10
-        desconposicion = descomposicion + modulo
+        descomposicion.append(modulo)   
+        numero //= 10
 
-        
-
-        return descomposicion
+    return descomposicion 
