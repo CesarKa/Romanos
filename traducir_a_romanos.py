@@ -9,31 +9,36 @@ def traducir_a_romano(numero, posicion):
     return romanos[posicion][numero]    
 
 
+def traductor(lista):
+
+    resultado_romano = []
+
+    for posicion, numero in enumerate(lista):
+        if posicion == 0:
+            resultado_romano.append(traducir_a_romano(numero, 3))
+        elif posicion == 1:
+            resultado_romano.append(traducir_a_romano(numero, 2))
+        elif posicion == 2:
+            resultado_romano.append(traducir_a_romano(numero, 1))
+        elif posicion == 3:
+            resultado_romano.append(traducir_a_romano(numero, 0))
+    
+    return "".join(resultado_romano)
 
 def descomponer(numero):
     descomposicion = []
-    modulo = 0
-    coeficiente = 0
 
     while numero > 0:
         modulo = numero % 10
         descomposicion.append(modulo)   
         numero //= 10
-
+    descomposicion.reverse()
     return descomposicion 
 
-def traductor(lista):
+numero = int(input("Número que transformar: "))
 
-    resultado_romano = []
+lista_descompuesta = descomponer(numero)
 
-    for posicion, numero in lista:
-        if posicion == 0:
-            resultado_romano.apend(traducir_a_romano(numero))
-        elif posicion == 1:
-            resultado_romano.apend(traducir_a_romano(numero))
-        elif posicion == 2:
-            resultado_romano.apend(traducir_a_romano(numero))
-        elif posicion == 3:
-            resultado_romano.apend(traducir_a_romano(numero))
-    
-    return resultado_romano
+numero_romano = traductor(lista_descompuesta)
+
+print(f"Número romano: {numero_romano}")
