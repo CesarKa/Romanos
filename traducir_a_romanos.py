@@ -15,14 +15,14 @@ def traductor(lista):
 
     for posicion, numero in enumerate(lista):
         if posicion == 0:
-            resultado_romano.append(traducir_a_romano(numero, 3))
-        elif posicion == 1:
-            resultado_romano.append(traducir_a_romano(numero, 2))
-        elif posicion == 2:
-            resultado_romano.append(traducir_a_romano(numero, 1))
-        elif posicion == 3:
             resultado_romano.append(traducir_a_romano(numero, 0))
-    
+        elif posicion == 1:
+            resultado_romano.append(traducir_a_romano(numero, 1))
+        elif posicion == 2:
+            resultado_romano.append(traducir_a_romano(numero, 2))
+        elif posicion == 3:
+            resultado_romano.append(traducir_a_romano(numero, 3))
+    resultado_romano.reverse()
     return "".join(resultado_romano)
 
 def descomponer(numero):
@@ -32,7 +32,6 @@ def descomponer(numero):
         modulo = numero % 10
         descomposicion.append(modulo)   
         numero //= 10
-    descomposicion.reverse()
     return descomposicion 
 
 numero = int(input("Número que transformar: "))
